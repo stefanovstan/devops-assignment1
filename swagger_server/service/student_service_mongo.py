@@ -25,9 +25,9 @@ def add(student=None):
     # return student.student_id
 
     query = {"student_id": student.student_id}
-    query_length = len(list(student_col.find(query)))
+    query_find = student_col.find_one(query)
 
-    if (query_length > 0):
+    if (query_find):
         return 'already exists', 409
 
     student_col.insert_one(student.to_dict())
