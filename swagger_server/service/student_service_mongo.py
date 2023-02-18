@@ -30,9 +30,9 @@ def add(student=None):
     if (query_find):
         return 'already exists', 409
 
-    student_col.insert_one(student.to_dict())
+    id = student_col.insert_one(student.to_dict()).inserted_id
 
-    return student.student_id
+    return str(id)
 
 
 def get_by_id(student_id=None, subject=None):
