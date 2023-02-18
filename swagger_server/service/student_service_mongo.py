@@ -24,7 +24,7 @@ def add(student=None):
     # student.student_id = doc_id
     # return student.student_id
 
-    query = {"student_id": student.student_id}
+    query = {"first_name": student.first_name, "last_name": student.last_name, "student_id": student.student_id}
     query_find = student_col.find_one(query)
 
     if (query_find):
