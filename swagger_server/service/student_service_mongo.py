@@ -6,7 +6,7 @@ from functools import reduce
 
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://mongo:27017")
+client = MongoClient(os.getenv("MONGO_URI"))
 mydb = client["mydatabase"]
 student_col = mydb["students"]
 
